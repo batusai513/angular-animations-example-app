@@ -95,20 +95,40 @@ body {
 
 
 .page{
-    bottom:0; 
+    bottom:0;
     padding-top:200px;
-    position:absolute; 
+    position:absolute;
     text-align:center;
     top:0;
     left: 0;
-    width:100%; 
+    width:100%;
 }
 
 
 
-    .ng-enter           { animation: scaleUp 0.5s both ease-in; z-index: 8888; }
-    .ng-leave           { animation: slideOutLeft 0.5s both ease-in; z-index: 9999; }
+.ng-enter{
+  // animation: scaleUp 0.5s both ease-in;
+  z-index: 8888;
+  transform: scale(1.5);
+  opacity: 0;
+  transition: all 0.3s ease-in 0.15s;
+}
+.ng-enter-active{
+  transform: scale(1);
+  opacity: 1;
+}
+.ng-leave{
+  animation: rotateFall 0.5s both ease-in;
+  z-index: 9999;
+}
 
+.ng-leave{
+  transition: all 0.3s ease-out;
+}
+// .ng-leave-active{
+//   transform: scale(0.8);
+//   opacity: 0;
+// }
 
 @keyframes rotateFall {
     0%      { transform: rotateZ(0deg); }
